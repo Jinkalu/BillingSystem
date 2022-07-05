@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BillingSystem</title>
+</head>
+<body>
+<nav>  <div class="w3-right w3-hide-small">
+
+</div></nav>
+<center>
+    <div th:if="${(param.sts!=null)}">
+        <div>
+
+            <strong>Admin not Found...!</strong>
+
+        </div>
+    </div>
+
+    </div>
+    <h1>LogIn</h1>
+    <form action="/adminValidation" method="post">
+
+        <input type="text" name="name" placeholder="Admin Name"><br><br>
+        <input type="password" name="password" placeholder="Password"><br><br>
+        <input type="submit" value="LogIn">
+
+    </form>
+</center>
+</body>
+</html>

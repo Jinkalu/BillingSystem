@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav> <div>
+
+    <a th:href="@{/dashBoard}" >Profile</a>
+    <a th:href="@{/users}" >Users</a>
+    <a th:href="@{/logoutA}" >Log Out</a>
+
+</div></nav>
+<form action="/adds">
+    <input type="text" name="lowRange" placeholder="Low Range"><br><br>
+    <input type="text" name="hihgRange" placeholder="High Range"><br><br>
+    <input type="text" name="charge" placeholder="Price"><br><br>
+
+    Type:<input type="radio" name="type" value="t" required> Telescopic
+         <input type="radio" name="type" value="n">Non Telescopic
+
+
+    <input type="submit" value="Add">
+</form>
+</body>
+</html>

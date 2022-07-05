@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BillingSystem</title>
+</head>
+<body>
+<nav> <div class="w3-right w3-hide-small">
+
+    <a th:href="@{/profile}" class="w3-bar-item w3-button">Profile</a>
+    <a th:href="@{/calc}" class="w3-bar-item w3-button">Calculate Bill</a>
+    <a th:href="@{/logout}" class="w3-bar-item w3-button">Log Out</a>
+</div></nav>
+    <form method="post" th:action="@{/saveUpdate}">
+
+        <input type="text" name="name" th:value="${c.name}"><br><br>
+        <input type="text" name="consumerNumber" th:value="${c.consumerNumber}"><br><br>
+
+        <textarea name="address" th:text="${c.address}"></textarea><br><br>
+        <input type="text" name="phone" th:value="${c.phone}"><br><br>
+        <input type="text" name="password" th:value="${c.password}"><br><br>
+        <input type="hidden" name="id" th:value="${c.id}"><br><br>
+
+        <input type="submit" value="UPDATE">
+
+
+    </form>
+
+</body>
+</html>

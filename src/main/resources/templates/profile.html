@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BillingSystem</title>
+</head>
+<body>
+<nav> <div class="w3-right w3-hide-small">
+
+    <a th:href="@{/profile}" class="w3-bar-item w3-button">Profile</a>
+    <a th:href="@{/billForm}" class="w3-bar-item w3-button">Calculate Bill</a>
+    <a th:href="@{/logout}" class="w3-bar-item w3-button">Log Out</a>
+</div></nav>
+<center>Profile
+
+<table>
+    <tr>
+        <td>Consumer Name:</td>
+        <td>[[${c.name}]]</td>
+    </tr>
+    <tr>
+        <td>Consumer Number:
+        <td>[[${c.consumerNumber}]]</td>
+    </tr>
+    <tr>
+        <td>Address:
+        <td>[[${c.address}]]</td>
+    </tr>
+    <tr>
+        <td>Phone:
+        <td>[[${c.phone}]]</td>
+    </tr>
+    <tr>
+        <td><a th:href="@{/bill/{id}(id=${c.id})}">View Details</a> </td>
+        <td><a th:href="@{/update/{id}(id=${c.id})}">UPDATE</a></td>
+    </tr>
+</table>
+</center>
+</body>
+</html>

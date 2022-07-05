@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>billingSystem</title>
+</head>
+<body>
+<nav> <div class="w3-right w3-hide-small">
+    <a th:href="@{/profile}" >Profile</a>
+    <a th:href="@{/billForm}">Calculate Bill</a>
+    <a th:href="@{/logout}" >Log Out</a>
+</div></nav>
+<table border="1">
+
+    <tr>
+        <th>Readings</th>
+        <th>Bill</th>
+        <th>Bill Date</th>
+    </tr>
+
+    <tr th:each="i:${rl}">
+        <td>[[${i.previousReading}]]</td>
+        <td>[[${i.previousBill}]]</td>
+        <td>[[${i.date}]]</td>
+    </tr>
+
+</table>
+
+</body>
+</html>

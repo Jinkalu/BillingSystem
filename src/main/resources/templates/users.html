@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>billing</title>
+</head>
+<body>
+<nav> <div>
+
+  <a th:href="@{/dashBoard}" >Profile</a>
+  <a th:href="@{/users}" >Users</a>
+  <a th:href="@{/logoutA}" >Log Out</a>
+
+</div></nav>
+<center>
+  <table border="1">
+    <tr>
+    <th>Consumer Name</th>
+    <th>Consumer Number</th>
+    <th>Address</th>
+    <th>Phone</th>
+    </tr>
+    <tr th:each="i:${m}">
+      <td>[[${i.name}]]</td>
+      <td>[[${i.consumerNumber}]]</td>
+      <td>[[${i.address}]]</td>
+      <td>[[${i.phone}]]</td>
+    </tr>
+  </table>
+</center>
+</body>
+</html>

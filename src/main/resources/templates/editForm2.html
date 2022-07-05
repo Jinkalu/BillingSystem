@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>billing</title>
+</head>
+<body>
+<nav> <div>
+
+    <a th:href="@{/dashBoard}" >Profile</a>
+    <a th:href="@{/users}" >Users</a>
+    <a th:href="@{/logoutA}" >Log Out</a>
+
+</div></nav>
+<form method="post" th:action="@{/update}">
+
+
+        <label for="r">
+            low range</label>
+        <input type="text" name="lowRange" th:value="${s.lowRange}"  id="r" >
+
+    <label for="c">
+        low range</label>
+    <input type="text" name="highRange" th:value="${s.highRange}"  id="c" >
+
+
+
+        <label for="e">Energy Charge	</label>
+        <input type="text" name="charge" th:value="${s.charge}" id="e" >
+
+
+    <input type="hidden" name="id" th:value="${s.id}">
+    <input type="hidden" name="type" th:value="${s.type}">
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>

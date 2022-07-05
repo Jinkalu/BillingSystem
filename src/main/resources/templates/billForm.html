@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<nav> <div class="w3-right w3-hide-small">
+
+    <a th:href="@{/profile}" class="w3-bar-item w3-button">Profile</a>
+    <a th:href="@{/billForm}" class="w3-bar-item w3-button">Calculate Bill</a>
+    <a th:href="@{/logout}" class="w3-bar-item w3-button">Log Out</a>
+</div></nav>
+<form method="post" action="calc">
+
+    <input type="text" th:value="${r.previousReading}" name="previousReading"><br><br>
+    <input placeholder="Current Reading" type="text" th:value="${param.current}" name="currentReading" required><br><br>
+    Months: 1::
+    <input type="radio" name="month" value="1" required>
+    2::
+    <input type="radio" name="month" value="2" required>
+
+    <input type="submit" value="Calculate">
+</form>
+
+    <div th:if="${param.bill!=null}" class="mt-5">
+        <form action="saveBill" method="post">
+
+                <label  for="bill">Your Bill Amount</label>
+
+                <input type="number" name="previousBill" class="" th:value="${param.bill}" id="bill">
+
+                <input type="hidden" name="previousReading" th:value="${param.current}">
+
+                <input type="submit"  value="Save">
+
+
+
+        </form>
+    </div>
+
+
+
+</body>
+</html>

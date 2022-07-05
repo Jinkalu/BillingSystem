@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>billingSystem</title>
+</head>
+<body>
+<nav>
+    <div class="w3-right w3-hide-small">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/slabs}">View Slabs</a>
+        <a th:href="@{/profile}">Profile</a>
+        <a th:href="@{/register}">Register Here</a>
+        <a th:href="@{/login}">Log In</a>
+    </div>
+</nav>
+<center>
+    <table border="1">
+        <tr>
+            <th>Slabs</th>
+            <th>Price</th>
+
+        </tr>
+        <tr>
+            <th colspan="2">Telescopic</th>
+
+        </tr>
+        <tr th:each="i:${s}" th:if="${i.type}=='t'">
+
+            <td>[[${i.lowRange}]]-[[${i.highRange}]]</td>
+
+            <td>[[${i.charge}]]</td>
+
+        </tr>
+        <tr>
+
+            <th colspan="2">Non-Telescopic</th>
+
+        </tr>
+        <tr th:each="i:${s}" th:if="${i.type}=='n'">
+
+            <td>[[${i.lowRange}]]-[[${i.highRange}]]</td>
+
+            <td>[[${i.charge}]]</td>
+
+        </tr>
+    </table>
+</center>
+</body>
+</html>

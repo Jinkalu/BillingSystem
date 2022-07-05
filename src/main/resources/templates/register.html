@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav>  <div class="w3-right w3-hide-small">
+    <a th:href="@{/}" >Home</a>
+    <a th:href="@{/slabs}">View Slabs</a>
+    <a th:href="@{/profile}">Profile</a>
+    <a th:href="@{/register}">Register Here</a>
+    <a th:href="@{/login}">Log In</a>
+</div></nav>
+<div th:if="${sts}">
+    <div>
+
+        <strong>Registration Completed...</strong>click here to <a th:href="@{login}"
+                                                                   class="alert-link">logIn</a>
+    </div>
+</div>
+<form method="post" action="save">
+
+
+<input id="Name"  type="text"
+       placeholder="name" name="name" required><br><br>
+
+
+
+
+    <input id="con" type="number" name="consumerNumber" minlength="13" maxlength="13" required
+           placeholder="Consumer Number"><br><br>
+
+
+
+
+    <textarea id="add" class="form-control col-6" name="address" required>Address</textarea><br><br>
+
+
+
+
+
+    <input id="ph" type="number" name="phone" required placeholder="Phone Number"><br><br>
+
+
+
+
+    <input id="read" class="form-control col-6" aria-describedby="Name" type="number"
+           name="previousReading" required placeholder="Previous Reading"><br><br>
+
+
+
+
+
+
+    <input id="bill" type="number" name="previousBill" required placeholder="Previous Bill"><br><br>
+
+
+
+
+    <input id="date" type="text"
+           name="date" required placeholder="yyyy-mm-dd"><br><br>
+
+
+
+
+    <input id="pass"  type="password"
+           name="password" required placeholder="Password"><br><br>
+
+
+    <input  type="submit" value="Register">
+
+
+</form>
+
+</body>
+</html>
